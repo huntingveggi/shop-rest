@@ -1,0 +1,49 @@
+    <div class="panel panel-default">
+      <div class="panel-heading">Ihre Dienstleistungsanfragen</div>
+			<div class="panel-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="service-table-date">
+								Datum
+							</th>
+							<th class="service-table-customer">
+								Name Kunde
+							</th>
+							<th class="service-table-product">
+								Produkt
+							</th>
+							<th class="service-table-fct">
+								&Ouml;ffnen
+							</th>
+						</tr>
+					</thead>
+					<!-- Ab hier die Daten aus dem Warenkorb auslesen -->
+					<tbody ng-if="services">
+						<tr ng-repeat="service in services">
+							<td class="service-table-date">
+								{{service.date}}
+							</td>
+							<td class="service-table-customer">
+								{{service.customer}}
+							</td>
+							<td class="service-table-product">
+								{{service.product}}
+							</td>
+							<td class="service-table-fct">
+								<button type="button" class="btn btn-default btn-sm">
+									<span class="fa fa-eye-open"></span>
+								</button>
+							</td>
+						</tr>
+					</tbody>
+					<tbody ng-if="!services">
+						<tr>
+							<td colspan="4">
+								Keine Auftr&auml;ge verf&uuml;gbar.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+    </div>
