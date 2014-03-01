@@ -1,0 +1,27 @@
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">Verlauf</h2>
+      </div>
+			<div ng-if="!servicerequests" class="panel-body">
+				Noch keine Konversation vorhanden.
+			</div>
+			<table ng-if="servicerequests" class="table">
+				<tbody> 
+					<tr ng-repeat="servicerequest in servicerequests">
+						<td class="dl-table-date">
+							{{servicerequest.date}}
+						</td>
+						<td class="dl-table-name">
+							{{servicerequest.sender}}
+						</td>
+						<td class="dl-table-text">
+							{{servicerequest.text}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+    </div>
+    <button type="button" class="btn btn-default btn-sm">
+      Zur&uuml;ck zur Produkt&uuml;bersicht
+    </button>
