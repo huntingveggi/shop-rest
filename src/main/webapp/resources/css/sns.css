@@ -54,17 +54,17 @@
 	position: absolute;
 	top: 250px;
 	right: 60px;
-	width: 90px;
-	height: 90px;
-	padding-top: 30px;
+	width: 110px;
+	height: 110px;
+	padding-top: 35px;
 	text-align: center;
 	background-color: #eee;
 	color: green; 
 	font-size: 1.8em;
 	font-weight: bold;
-	-webkit-border-radius: 45px;
-	-moz-border-radius: 45px;
-	border-radius: 45px;
+	-webkit-border-radius: 55px;
+	-moz-border-radius: 55px;
+	border-radius: 55px;
 }
 
 .product-shop {
