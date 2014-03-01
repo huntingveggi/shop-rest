@@ -45,6 +45,7 @@ public class ProductController {
 		for (Product product : products) {
 			logger.debug(product.getId() + " - " + product.getName() + " - "
 					+ product.getDescription());
+			doLazyInitialization(product);
 		}
 		products.add(productDAO.getNewInstance());
 		return products;
@@ -60,9 +61,7 @@ public class ProductController {
 		Product product = productDAO.findById(productId);
 
 		if (product != null) {
-			product.getCategories().size();
-			product.getAttributes().size();
-
+			doLazyInitialization(product);
 			logger.debug("Found product is: " + product);
 			return product;
 		}
@@ -76,6 +75,15 @@ public class ProductController {
 	@ExceptionHandler(NullPointerException.class)
 	public void handleCustomException(NullPointerException ex) {
 		logger.error(ex.getMessage(), ex);
+	}
+
+	/**
+	 * @param product
+	 */
+	public void doLazyInitialization(Product product) {
+		product.getCategories().size();
+		product.getAttributes().size();
+		product.getProducer();
 	}
 
 }
