@@ -32,7 +32,7 @@ angular.module('sns', ['ngRoute', 'snsHomeView'])
 	}];
 
 	$scope.categories = [{
-		name: 'Waschmaschine',
+		name: 'Waschmaschinen',
 		items: [{
 			path: 'subcategory/6',
 			name: 'Liebherr',
