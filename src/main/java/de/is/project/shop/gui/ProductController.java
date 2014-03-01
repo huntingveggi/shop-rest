@@ -47,7 +47,6 @@ public class ProductController {
 					+ product.getDescription());
 			doLazyInitialization(product);
 		}
-		products.add(productDAO.getNewInstance());
 		return products;
 	}
 
