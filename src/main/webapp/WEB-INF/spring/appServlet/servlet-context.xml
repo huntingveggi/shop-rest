@@ -41,6 +41,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+
 	<context:component-scan base-package="de.is.project" />
 
 
