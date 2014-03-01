@@ -3,6 +3,10 @@
 	background-color: #ffffff;
 }
 
+.navbar-brand {
+	padding: 0;
+}
+
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,

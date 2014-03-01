@@ -1,4 +1,4 @@
-angular.module('sns', ['ngRoute', 'snsHomeView'])
+angular.module('sns', ['ngRoute', 'ngAnimate', 'snsHomeView', 'snsProductView'])
 
 .config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
 	$routeProvider.otherwise({
@@ -33,6 +33,7 @@ angular.module('sns', ['ngRoute', 'snsHomeView'])
 
 	$scope.categories = [{
 		name: 'Waschmaschinen',
+		id: 9,
 		items: [{
 			path: 'subcategory/6',
 			name: 'Liebherr',
@@ -48,6 +49,7 @@ angular.module('sns', ['ngRoute', 'snsHomeView'])
 		}]
 	}, {
 		name: 'Geschirrspüler', 
+		id: 3,
 		items: [{
 			path: 'subcategory/1',
 			name: 'Liebherr',
@@ -63,6 +65,7 @@ angular.module('sns', ['ngRoute', 'snsHomeView'])
 		}]
 	}, {
 		name: 'Kühlschränke',
+		id: 2,
 		items: [{
 			path: 'subcategory/123',
 			name: 'Siemens',

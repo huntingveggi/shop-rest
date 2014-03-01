@@ -25,7 +25,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#!/"><img class="img-responsive" src="resources/img/logo.png"></a>
+						<a class="navbar-brand" href="#!/"><img class="img-responsive" src="resources/img/logo.png" ng-alt="{{titleSuffix}}"></a>
 					</div>
 					<div class="collapse navbar-collapse" id="sns-navbar-collapse">
 						<form class="navbar-form navbar-left" role="search">
@@ -67,15 +67,15 @@
 			<div class="col-md-12">
 				<ol class="breadcrumb">
 					<li><a href="#!/">Shop</a></li>
-					<li ng-repeat="crumb in breadcrumb" ng-class="{'active': $last}"><span ng-if="$last">{{crumb.name}}</span><a ng-if="!$last" ng-href="#!/{{crumb.path}}">{{crumb.name}}</a></li>
+					<li ng-repeat="crumb in breadcrumb" ng-class="{'active': $last}"><span ng-if="$last">{{crumb.name}}</span><a ng-if="!$last" ng-href="#!{{crumb.path}}">{{crumb.name}}</a></li>
 				</ol>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-2">
-				<ul class="nav nav-pills nav-stacked" ng-repeat="category in categories">
-					<li class="active"><a href="">{{category.name}} <span class="badge pull-right">{{category.items.length}}</span></a></li>
-					<li ng-repeat="item in category.items"><a ng-href="#!/{{item.path}}">{{item.name}} <span class="badge pull-right">{{item.count}}</span></a></li>
+				<ul class="nav nav-pills nav-stacked" ng-repeat="category in categories" ng-init="category.showitems = false">
+					<li class="active" ng-click="category.showitems = !category.showitems"><a href="">{{category.name}} <span class="badge pull-right">{{category.items.length}}</span></a></li>
+					<li ng-repeat="item in category.items" ng-show="category.showitems"><a ng-href="#!/{{item.path}}">{{item.name}} <span class="badge pull-right">{{item.count}}</span></a></li>
 				</ul>
 			</div>
 			<div class="col-md-10" ng-view></div>
@@ -84,9 +84,11 @@
 	<script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="resources/js/snsAppView.js"></script>
 	<script src="resources/js/snsHomeView.js"></script>
+	<script src="resources/js/snsProductView.js"></script>
 </body>
 
 </html>
