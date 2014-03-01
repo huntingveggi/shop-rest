@@ -1,4 +1,4 @@
-angular.module('snsProductView', ['ngRoute'])
+angular.module('snsProductModule', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/product/:id', {

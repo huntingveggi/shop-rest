@@ -1,4 +1,4 @@
-angular.module('snsHomeView', ['ngRoute'])
+angular.module('snsHomeModule', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/', {

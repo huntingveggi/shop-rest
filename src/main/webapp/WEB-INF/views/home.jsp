@@ -86,9 +86,9 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<script src="resources/js/snsAppView.js"></script>
-	<script src="resources/js/snsHomeView.js"></script>
-	<script src="resources/js/snsProductView.js"></script>
+	<script src="resources/js/snsAppModule.js"></script>
+	<script src="resources/js/snsHomeModule.js"></script>
+	<script src="resources/js/snsProductModule.js"></script>
 </body>
 
 </html>

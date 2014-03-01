@@ -1,4 +1,4 @@
-angular.module('sns', ['ngRoute', 'ngAnimate', 'snsHomeView', 'snsProductView'])
+angular.module('sns', ['ngRoute', 'ngAnimate', 'snsHomeModule', 'snsProductModule'])
 
 .config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
 	$routeProvider.otherwise({
