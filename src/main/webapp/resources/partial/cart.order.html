@@ -1,0 +1,117 @@
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Bestellung: {{order.number}} vom {{order.date}} <br /> 
+                Auftragsstatus: {{order.state}}
+            </div>
+            <!-- Table -->
+            <table class="table ">
+				<thead>
+					<tr>
+						<th>
+							Produkt
+						</th>
+						<th>
+							Anzahl
+						</th>
+						<th>
+							Preis
+						</th>
+					</tr>
+				</thead>
+                
+				<tbody>
+					<tr ng-repeat="shoppingcartitem in shoppingcartitems">
+						<td>
+							{{shoppingcartitem.manufacturer}} - {{shoppingcartitem.name}}
+						</td>
+						<td>
+							{{shoppingcartitem.amount}}
+						</td>
+						<td>
+							EUR {{shoppingcartitem.sum}}
+						</td> 
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: right; font-weight: bold">
+							Summe:
+						</td>
+						<td>[[getTotalSum()]]EUR</td>
+					</tr>
+				</tbody>
+            </table>
+        </div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Lieferanschrift
+            </div>
+			<div class="panel-body">
+				{{deliveryadress.name}}<br/>
+				{{deliveryadress.street}} {{deliveryadress.streetnr}}<br/>
+				{{deliveryadress.zip}} {{deliveryadress.city}}<br/>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Rechnungsanschrift
+            </div>
+			<div class="panel-body">
+				{{billingadress.name}}<br/>
+				{{billingadress.street}} {{billingadress.streetnr}}<br/>
+				{{billingadress.zip}} {{billingadress.city}}<br/>
+			</div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				Allgemeine Gesch&auml;ftsbedinungen
+            </div>
+			<div class="panel-body">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="accepted" value="1">
+						Hiermit akzeptiere ich die <a data-toggle="modal" href="#" data-target="#modalAGB">Allgemeinen Gesch&auml;ftsbedingungen</a>.
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			     <button type="button" class="btn btn-default btn-sm">
+					Zur&uuml;ck zur Bestell&uuml;bersicht
+				</button>
+			</div>
+			<div class="col-md-8">
+			</div>
+			<div class="col-md-2">
+				<button type="submit" class="btn btn-primary btn-lg">
+					Kaufen
+				</button>
+			</div>
+			
+		</div>
+		
+		
+		
+		<!-- Modal -->
+		<div class="modal fade" id="modalAGB" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Allgemeinen Gesch&auml;ftsbedingungen</h4>
+			  </div>
+			  <div class="modal-body">
+				Mit Best&auml;tigung der allgemeinen Gesch&auml;ftsbedingungen akzeptieren Sie die in den Dienstleistungsanfragen unterbreiteten Preise der Kl&ouml;pping Elektronik.
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Schlie&szlig;en</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../js/vendor/bootstrap.js"></script>
