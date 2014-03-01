@@ -1,0 +1,46 @@
+        <div class="panel panel-default">
+          <div class="panel-heading">Ihre Bestellungen</div>
+            <table class="table">
+                <thead>
+					<tr>
+						<td class="order-table-date">
+							Datum
+						</td>
+						<td class="order-table-customer">
+							Name Kunde
+						</td>
+						<td class="order-table-number">
+							Auftragsnummer
+						</td>
+						<td class="order-table-fct">
+							&Ouml;ffnen
+						</td>
+					</tr>
+				</thead>
+				<tbody ng-if="orders">
+					<tr ng-repeat="order in orders">
+						<td class="order-table-date">
+							{{order.date}}
+						</td>
+						<td class="order-table-customer">
+							{{order.customer}}
+						</td>
+						<td class="order-table-number">
+							{{order.number}}
+						</td>
+						<td class="order-table-fct">
+							<button type="button" class="btn btn-default btn-sm">
+								<span class="fa fa-eye-open"></span>
+							</button>
+						</td>
+					</tr>
+				</tbody>
+				<tbody ng-if="!orders">
+					<tr>
+						<td colspan="4">
+							Keine Auftr&auml;ge verf&uuml;gbar.
+						</td>
+					</tr>
+				</tbody>
+            </table>
+        </div>
