@@ -44,7 +44,6 @@
 	height: 400px;
 	margin-right: 20px;
 	margin-bottom: 20px;
-	background-color: #fda;
 }
 
 .price-box {
@@ -106,7 +105,20 @@
 	width: 20%;
 }
 
+.service-table-date {
+	width: 25%;
+}
+.service-table-customer {
+	width: 30%;
+}
+.service-table-product {
+	width: 25%;
+}
+.service-table-fct {
+	width: 20%;
+}
 
 .glyphicon-shopping-cart:before {
     content: "";
 }
+
