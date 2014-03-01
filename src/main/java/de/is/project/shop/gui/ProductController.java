@@ -58,7 +58,7 @@ public class ProductController {
 			Model model) {
 		logger.debug("Find product by id: " + productId);
 		Product product = productDAO.findById(productId);
-		
+
 		if (product != null) {
 			product.getCategories().size();
 			product.getAttributes().size();
@@ -75,6 +75,7 @@ public class ProductController {
 	@ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Object not found")
 	@ExceptionHandler(NullPointerException.class)
 	public void handleCustomException(NullPointerException ex) {
+		logger.error(ex.getMessage(), ex);
 	}
 
 }
