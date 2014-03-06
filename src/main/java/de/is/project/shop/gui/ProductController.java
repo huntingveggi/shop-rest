@@ -23,7 +23,7 @@ import de.is.project.shop.api.domain.Product;
 import de.is.project.shop.api.persistence.ProductDAO;
 
 /**
- * Handles requests for the application home page.
+ * Handles requests for products.
  */
 @Controller
 @RequestMapping(value = "/products")
@@ -35,11 +35,17 @@ public class ProductController {
 	@Inject
 	ProductDAO productDAO;
 
+	/**
+	 * Handles requests for current offers. The current offers are special
+	 * offers which are displeyed at start page
+	 * 
+	 * @return Returns the list of current products
+	 */
 	@RequestMapping(value = "/current-offers", method = RequestMethod.GET, produces = {
 			"application/xml", "application/json" })
 	@Transactional(propagation = Propagation.REQUIRED)
 	public @ResponseBody
-	Collection<Product> getCurrentOfers(Locale locale, Model model) {
+	Collection<Product> getCurrentOfers() {
 		Collection<Product> products = productDAO.getCurrentOffers();
 		logger.debug("product.size " + products.size());
 		for (Product product : products) {
@@ -56,12 +62,13 @@ public class ProductController {
 	public @ResponseBody
 	Product getProductById(@PathVariable int productId, Locale locale,
 			Model model) {
+
 		logger.debug("Find product by id: " + productId);
 		Product product = productDAO.findById(productId);
 
 		if (product != null) {
 			doLazyInitialization(product);
-			logger.debug("Found product is: " + product);
+			logger.debug("Found product: " + product);
 			return product;
 		}
 
