@@ -72,7 +72,7 @@ angular.module('sns', ['ngRoute', 'ngAnimate', 'snsHomeModule', 'snsProductModul
 			count: 196
 		}, {
 			path: 'subcategory/12',
-			name: 'Mercedes',
+			name: 'Samsung',
 			count: 18
 		}]
 	}];
