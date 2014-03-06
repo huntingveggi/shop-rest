@@ -87,6 +87,7 @@ public class ShoppingCartController {
 		try {
 			product = productController
 					.getProductById(productId, locale, model);
+			productController.doLazyInitialization(product);
 			this.shoppingCartService.getShoppingCart();
 			this.shoppingCartService.removeProduct(product);
 		} catch (Exception e) {
@@ -159,6 +160,7 @@ public class ShoppingCartController {
 		if (product == null) {
 			throw new NullPointerException();
 		}
+		productController.doLazyInitialization(product);
 
 		this.shoppingCartService.addProduct(product);
 		return this.shoppingCartService.getShoppingCart();
