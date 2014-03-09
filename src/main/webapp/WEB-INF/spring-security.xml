@@ -10,7 +10,7 @@
 		<intercept-url pattern="/*" access="ROLE_CUSTOMER" />
 	</http>
  
-	<authentication-manager>
+	<authentication-manager alias="authenticationManager">
 	   <authentication-provider>
 		<jdbc-user-service data-source-ref="dataSource" users-by-username-query="select email, password, active from customers where email=?" authorities-by-username-query="select email, role from customers where email = ?"/>
 	   </authentication-provider>
